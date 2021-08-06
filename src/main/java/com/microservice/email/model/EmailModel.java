@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 import com.microservice.email.enums.StatusEmail;
 
@@ -26,12 +27,30 @@ public class EmailModel implements Serializable {
 	private String ownerRef;
 	private String emailFrom;
 	private String emailTo;
+	@NotBlank
 	private String subject;
 	@Column(columnDefinition = "TEXT")
 	private String text;
 	private LocalDateTime sendDateEmail;
 	private StatusEmail statusEmail;
 	
-	
+	public void setSendDateEmail(LocalDateTime now) {
+		
+	}
+	public String getEmailFrom() {
+		return emailFrom;
+	}
+	public String getEmailTo() {
+		return emailTo;
+	}
+	public String getSubject() {
+		return subject;
+	}
+	public String getText() {
+		return text;
+	}
+	public void setStatusEmail(StatusEmail sent) {
+		
+	}
 
 }
